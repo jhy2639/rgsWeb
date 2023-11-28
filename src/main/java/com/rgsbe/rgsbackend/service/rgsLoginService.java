@@ -1,4 +1,4 @@
 package com.rgsbe.rgsbackend.service;
 
-public class rgsJoinService {
+public class rgsLoginService {
 }
