@@ -1,0 +1,43 @@
+/* css 규칙
+1. 위치(다른 element와의 관계, 위치), margin
+2. width
+3. height
+4. text-align
+5. font-size
+6. border
+7. color
+8. cursor 
+*/
+
+.loginForm{
+    position:absolute;
+    margin-left: 40%;
+    width: 500px;
+    height: 400px;
+    /* text-align: ;
+    border: ; */
+    color: rebeccapurple;
+    background-color: ivory;
+}
+
+.inputId{
+    position: relative;
+    margin-top: 20%;
+    width: 450px;
+    height: 200px;
+    text-align: left;
+    
+    color: rgb(40,40,40);
+}
+
+.inputPw{
+    width: 450px;
+    height: 100px;
+    text-align: left;
+    
+    color: rgb(40,40,40);
+}
+
+.loginBtn{
+    cursor: pointer;
+}
