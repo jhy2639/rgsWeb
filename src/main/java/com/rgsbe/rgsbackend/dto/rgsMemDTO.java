@@ -3,6 +3,8 @@ package com.rgsbe.rgsbackend.dto;
 import com.rgsbe.rgsbackend.entity.rgsMemEntity;
 import lombok.*;
 
+import javax.persistence.Column;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,6 +19,11 @@ public class rgsMemDTO {
     private String memPhone;
 
     public static rgsMemDTO toRgsMemDTO(rgsMemEntity rgsmemEntity){
+
+        if(rgsmemEntity == null){
+            return null;
+        }
+
         rgsMemDTO rgsMemDTO = new rgsMemDTO();
         rgsMemDTO.setMemID(rgsmemEntity.getMemID());
         rgsMemDTO.setMemPwd(rgsmemEntity.getMemPwd());

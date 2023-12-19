@@ -23,18 +23,18 @@ public class rgsMemEntity {
     @Column
     private String memNm;
     @Column
-    private String memPhone;
-    @Column
     private String memBirth;
+    @Column
+    private String memPhone;
 
     public static rgsMemEntity toRgsMemEntity(rgsMemDTO rgsMemDTO) {
         rgsMemEntity rgsMemEntity = new rgsMemEntity();
-
         rgsMemEntity.setMemID(rgsMemDTO.getMemID());
         rgsMemEntity.setMemPwd(rgsMemDTO.getMemPwd());
         rgsMemEntity.setMemNm(rgsMemDTO.getMemNm());
         rgsMemEntity.setMemBirth(rgsMemDTO.getMemBirth());
         rgsMemEntity.setMemPhone(rgsMemDTO.getMemPhone());
+
         return rgsMemEntity;
     }
 }

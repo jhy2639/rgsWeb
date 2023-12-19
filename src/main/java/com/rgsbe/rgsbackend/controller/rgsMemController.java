@@ -4,13 +4,12 @@ import com.rgsbe.rgsbackend.dto.rgsMemDTO;
 import com.rgsbe.rgsbackend.service.rgsMemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
-@Controller
+
+@RestController
 @RequiredArgsConstructor
 public class rgsMemController {
 
@@ -29,22 +28,23 @@ public class rgsMemController {
     }
 
     // 로그인
-    @GetMapping("/rgsLogin")
+    @GetMapping("/api/rgsLogin")
     public String memberLogin() {
+
         return "memberForm/rgsLogin";
     }
 
-    @PostMapping("/rgsLogin")
+    @PostMapping("/api/rgsLogin")
     public String memberLoginDone(@ModelAttribute rgsMemDTO rgsMemDTO,
                                   HttpSession session) {
         rgsMemDTO loginResult = rgsMemService.memberLogin(rgsMemDTO);
+
         if(loginResult != null){
-            System.out.println("성공");
             //로그인 성공
             session.setAttribute("loginID", loginResult.getMemID());
             return "main";
         } else {
-            System.out.println("실패");
+            System.out.println("컨트롤러에서 로그인 실패");
             //로그인 실패
             return "memberForm/rgsLogin";
         }
